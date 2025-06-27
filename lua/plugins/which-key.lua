@@ -9,8 +9,8 @@ return {
 			col = math.huge, -- 将弹窗定位到屏幕最右侧
 			row = -1, -- 将弹窗定位到屏幕最顶端
 			-- row = -1, -- 底部80%位置
-			width = 0.2, -- 宽度30%
-			height = 0.55, -- 高度40%
+			width = 30, -- 宽度30%
+			height = 20, -- 高度40%
 			border = "rounded", -- 圆角边框
 			padding = { 1, 1 },
 			title = true, -- 不显示标题
