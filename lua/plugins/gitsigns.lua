@@ -28,7 +28,7 @@ return {
 			signcolumn = true, -- 始终显示 Git 标记列（左侧的修改标识）
 			numhl = false, -- 不高亮行号
 			linehl = false, -- 不高亮整行
-			word_diff = true, -- 默认不启用行内单词级别的差异高亮，可以通过快捷键切换
+			word_diff = false, -- 默认不启用行内单词级别的差异高亮，可以通过快捷键切换
 			watch_gitdir = {
 				follow_files = true, -- 自动跟踪文件移动/重命名
 			},
