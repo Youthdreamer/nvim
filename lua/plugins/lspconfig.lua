@@ -71,14 +71,8 @@ return {
 			["ts_ls"] = {},
 			["emmet_ls"] = {},
 			["tailwindcss"] = {},
-			["rust_analyzer"] = {
-				rustfmt = {
-					enable = true,
-				},
-				formatOnsave = {
-					enable = true,
-				},
-			},
+			["rust_analyzer"] = {},
+			["gopls"] = {},
 		}
 
 		-- 收集所有 LSP 服务器的名称到 ensure_installed 列表中

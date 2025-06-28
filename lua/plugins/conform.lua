@@ -12,6 +12,7 @@ return {
 			-- 使用自定义格式化工具，这是Mason管理的工具，类似于这rust，见下表
 			toml = { "taplo" },
 			python = { "ruff" },
+			go = { "goimports" }, -- 包含gofmt的功能，附带import的管理
 			javascript = { "eslint_d", "prettierd" }, -- 使用 prettier 格式化 JavaScript
 			typescript = { "eslint_d", "prettierd" },
 			javascriptreact = { "eslint_d", "prettierd" },
@@ -26,7 +27,8 @@ return {
 
 		-- 非Mason管理的格式化工具自维护表，专门设置Mason不支持格式化工具
 		local custom_formatters_by_ft = {
-			rust = { "rustfmt" },
+			rust = { "rustfmt" }, -- rust安装时附带安装
+			-- go = { "gofmt" }, -- go安装时附带安装，但是goimports会更好
 		}
 
 		-- 返回一个去重的格式化工具列表

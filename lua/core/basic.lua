@@ -16,6 +16,7 @@ vim.opt.wrap = false -- 不换行显示
 vim.opt.colorcolumn = { "80", "120" }
 vim.opt.cursorline = true -- 启动光标行高亮
 
+vim.o.termguicolors = true -- 真色彩Alacritty，kitty，iTerm2 (macOS)，Windows Terminal (Windows 10/11)等
 vim.opt.laststatus = 2 -- 禁用底部状态栏
 
 -- python中为4个空格的缩进

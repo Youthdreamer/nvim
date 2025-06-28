@@ -1,8 +1,6 @@
--- TODO:配置未完成暂停。
 return {
 	"folke/trouble.nvim",
 	cmd = { "TroubleToggle", "Trouble" },
-	opts = { use_diagnostic_signs = true },
 	keys = {
 		{
 			"<leader>xx",
@@ -23,7 +21,7 @@ return {
 					vim.cmd.cprev()
 				end
 			end,
-			desc = "Previous trouble/quickfix item",
+			desc = "上一个故障/快速修复项目",
 		},
 		{
 			"]q",
@@ -34,6 +32,7 @@ return {
 					vim.cmd.cnext()
 				end
 			end,
+			desc = "下一个故障/快速修复项目",
 		},
 	},
 }

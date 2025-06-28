@@ -31,14 +31,6 @@ return {
 		name = "gruvbox",
 	},
 	{
-		"navarasu/onedark.nvim",
-		lazy = true,
-		name = "onedark",
-		config = function()
-			require("onedark").load()
-		end,
-	},
-	{
 		"rebelot/kanagawa.nvim",
 		lazy = true,
 		name = "kanagawa",

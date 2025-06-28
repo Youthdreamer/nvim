@@ -41,8 +41,6 @@ M.colorschemes = {
 	["catppuccin-frappe"] = {},
 	["catppuccin-macchiato"] = {},
 	["catppuccin-mocha"] = {},
-	-- onedark主题
-	["onedark"] = {},
 }
 
 return M
