@@ -2,6 +2,12 @@
 vim.opt.number = true -- 显示行号
 vim.opt.relativenumber = true -- 显示相对行号
 
+--换行统一
+-- 设置文件默认保存格式为 Unix (LF)
+vim.opt.fileformat = "unix"
+-- 设置文件格式检测优先级，Unix 优先
+vim.opt.fileformats = { "unix", "dos", "mac" }
+
 -- 搜索
 vim.opt.ignorecase = true -- 搜索忽略大小写
 vim.opt.smartcase = true -- 如果包含大写字符，则区分大小写

@@ -41,6 +41,12 @@ M.colorschemes = {
 	["catppuccin-frappe"] = {},
 	["catppuccin-macchiato"] = {},
 	["catppuccin-mocha"] = {},
+
+	-- rose-pine主题
+	["rose-pine"] = {},
+	["rose-pine-main"] = {},
+	["rose-pine-moon"] = {},
+	["rose-pine-dawn"] = {},
 }
 
 return M

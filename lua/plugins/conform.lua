@@ -11,7 +11,7 @@ return {
 			-- rust = {}, -- 不使用Mason安装的工具，所以这里设置为空，不会被Mason下载，战而使用lsp自带的格式化工具
 			-- 使用自定义格式化工具，这是Mason管理的工具，类似于这rust，见下表
 			toml = { "taplo" },
-			python = { "ruff" },
+			python = { "black", "isort" },
 			go = { "goimports" }, -- 包含gofmt的功能，附带import的管理
 			javascript = { "eslint_d", "prettierd" }, -- 使用 prettier 格式化 JavaScript
 			typescript = { "eslint_d", "prettierd" },

@@ -71,6 +71,7 @@ return {
 				},
 			},
 			["pyright"] = {},
+			["ruff"] = {},
 			["html"] = {},
 			["cssls"] = {},
 			["ts_ls"] = {},
