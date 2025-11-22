@@ -74,13 +74,6 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 	end,
 })
 
--- 首页 配色
--- vim.cmd([[
---   highlight AlphaHeader guifg=#ff5f00 guibg=NONE
---   highlight AlphaButtons guifg=#5fafd7 guibg=NONE
---   highlight AlphaFooter guifg=#87af5f guibg=NONE
--- ]])
-
 -- nvim是透明背景时需要这个设置
 -- vim.cmd([[
 --     highlight NotifyBackground guibg=#000000

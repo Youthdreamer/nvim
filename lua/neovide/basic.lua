@@ -1,6 +1,6 @@
 -- neovide的基础配置文件Basic.lua
 
-vim.opt.guifont = "FiraCode Nerd Font Mono,LXGW WenKai Mono:h16" -- 设置GUI界面的字体与大小
+vim.opt.guifont = "JetBrainsMono Nerd Font:h16" -- 设置GUI界面的字体与大小
 vim.opt.linespace = 2 -- 行距2
 
 -- 光标动画

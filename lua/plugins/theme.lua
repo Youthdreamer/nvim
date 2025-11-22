@@ -45,5 +45,9 @@ return {
 		lazy = true,
 		name = "nightfox",
 	},
-	{ "rose-pine/neovim", name = "rose-pine" },
+	{
+		"rose-pine/neovim",
+		lazy = true,
+		name = "rose-pine",
+	},
 }

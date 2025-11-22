@@ -11,7 +11,9 @@ return {
 			-- rust = {}, -- 不使用Mason安装的工具，所以这里设置为空，不会被Mason下载，战而使用lsp自带的格式化工具
 			-- 使用自定义格式化工具，这是Mason管理的工具，类似于这rust，见下表
 			toml = { "taplo" },
-			python = { "black", "isort" },
+			-- python的格式化查看下面的自维护列表 (custom_formatters_by_ft)
+			-- python = { "ruff" },
+			-- python = { "black", "isort" },
 			go = { "goimports" }, -- 包含gofmt的功能，附带import的管理
 			javascript = { "eslint_d", "prettierd" }, -- 使用 prettier 格式化 JavaScript
 			typescript = { "eslint_d", "prettierd" },
@@ -28,6 +30,17 @@ return {
 		-- 非Mason管理的格式化工具自维护表，专门设置Mason不支持格式化工具
 		local custom_formatters_by_ft = {
 			rust = { "rustfmt" }, -- rust安装时附带安装
+			-- ruff在lspconfig中的自维护列表中安装完成
+			python = {
+				-- 修复可以被 Ruff 自动修复的 lint（代码规范）错误。
+				"ruff_fix",
+
+				-- 运行 Ruff 的代码格式化功能。
+				"ruff_format",
+
+				-- 整理 import（按规则排序、删除未使用的 import）。
+				"ruff_organize_imports",
+			},
 			-- go = { "gofmt" }, -- go安装时附带安装，但是goimports会更好
 		}
 

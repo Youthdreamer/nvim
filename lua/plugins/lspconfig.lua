@@ -24,6 +24,7 @@ return {
 	opts = {},
 	config = function(_, opts)
 		require("mason").setup(opts)
+
 		-- 1. 诊断配置（放在最顶部）
 		vim.diagnostic.config({
 			-- virtual_text = false,
@@ -45,6 +46,7 @@ return {
 				border = "rounded",
 			},
 		})
+
 		-- local lspconfig = require('lspconfig')
 		local mason_lspconfig = require("mason-lspconfig")
 
@@ -70,11 +72,37 @@ return {
 					},
 				},
 			},
-			["pyright"] = {},
+			["pyright"] = {
+				settings = {
+					pyright = {
+						disableOrganizeImports = true, -- 禁用 Pyright 自动整理 import
+					},
+					python = {
+						analysis = {
+							ignore = { "*" }, -- 忽略所有文件分析，让 Ruff 处理 lint
+						},
+					},
+				},
+			},
 			["ruff"] = {},
 			["html"] = {},
 			["cssls"] = {},
-			["ts_ls"] = {},
+			["ts_ls"] = {
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = false,
+							includeInlayPropertyDeclarationTypeHints = false,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = false,
+						},
+					},
+					-- 保持 javascript 默认不启用
+				},
+			},
 			["emmet_ls"] = {},
 			["tailwindcss"] = {},
 			["rust_analyzer"] = {
@@ -83,6 +111,12 @@ return {
 						check = {
 							command = "clippy",
 							onSave = true,
+						},
+						inlayHints = {
+							enable = true,
+							typeHints = { enable = true },
+							parameterHints = { enable = true },
+							chainingHints = { enable = true },
 						},
 					},
 				},
@@ -100,7 +134,7 @@ return {
 		})
 
 		-- 定义通用的 on_attach 函数，用于绑定 LSP 快捷键和设置客户端行为
-		local on_attach = function(client, _)
+		local on_attach = function(client, bufnr)
 			-- 打印信息用于调试，了解哪个 LSP 客户端连接了
 			-- vim.notify("已连接 LSP 客户端: " .. client.name, vim.log.levels.INFO)
 			-- 禁用 LSP 内置的文档格式化（如果你使用外部格式化工具）
@@ -114,7 +148,10 @@ return {
             ]]
 			-- =================================================================
 
-			-- 这里两个禁止lsp的格式化，只是用格式化工具提供的格式化，放置lsp与格式化的冲突
+			-- 内联提示
+			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
+			-- 这里两个禁止lsp的格式化，只是用格式化工具提供的格式化，防止lsp与格式化的冲突
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentRangeFormattingProvider = false
 		end
@@ -132,6 +169,7 @@ return {
 		{ "<leader>cR", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "重命名符号" },
 		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "LSP 代码操作" },
 		{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "LSP 悬浮信息" },
+
 		{ "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "签名帮助" },
 
 		-- 诊断相关快捷键

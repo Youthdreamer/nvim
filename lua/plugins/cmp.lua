@@ -1,5 +1,5 @@
 -- ~/.config/nvim/lua/plugins/cmp.lua
-
+-- 保留，但是暂不启用改插件
 return {
 	"hrsh7th/nvim-cmp",
 	-- 插件加载事件，'InsertEnter' 是一个很好的平衡点，
