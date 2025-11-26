@@ -1,6 +1,7 @@
 --行号
 vim.opt.number = true -- 显示行号
 vim.opt.relativenumber = true -- 显示相对行号
+vim.opt.signcolumn = 'yes'    -- 永远显示 sign column（诊断标记）
 
 --换行统一
 -- 设置文件默认保存格式为 Unix (LF)
@@ -11,10 +12,12 @@ vim.opt.fileformats = { "unix", "dos", "mac" }
 -- 搜索
 vim.opt.ignorecase = true -- 搜索忽略大小写
 vim.opt.smartcase = true -- 如果包含大写字符，则区分大小写
+vim.opt.hlsearch = false -- 搜索匹配不高亮
+vim.opt.incsearch = true -- 增量搜索
 
 --换行缩进
-vim.opt.tabstop = 4 -- Tab 长度为 4
-vim.opt.shiftwidth = 4 -- 缩进长度为 4
+vim.opt.tabstop = 2 -- Tab 长度为 4
+vim.opt.shiftwidth = 2 -- 缩进长度为 4
 vim.opt.expandtab = true -- 将 Tab 替换为空格
 vim.opt.autoindent = true -- 复制当前行的缩进
 vim.opt.smartindent = true -- 在代码块中自动增加缩进
@@ -78,3 +81,4 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 -- vim.cmd([[
 --     highlight NotifyBackground guibg=#000000
 -- ]])
+

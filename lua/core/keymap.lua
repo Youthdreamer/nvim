@@ -12,11 +12,7 @@ map({ "i", "n", "v" }, "<C-S-q>", "<Cmd>q!<CR>", { silent = true, desc = "不保
 map({ "i", "n", "v", "s" }, "<C-s>", "<Cmd>w<CR>", { silent = true, desc = "保存文件" })
 map({ "i", "n" }, "<C-a>", "<Cmd>normal! ggVG<CR>", { silent = true, desc = "全选操作" })
 
-map("v", "<C-c>", '"+y', { desc = "复制到系统剪贴板" })
-
-map("i", "<C-x>", "<C-o>dd", { noremap = true, silent = true, desc = "剪切" })
-map("n", "<C-x>", '"+dd', { noremap = true, silent = true, desc = "剪切" })
-map("v", "<C-x>", '"+x', { noremap = true, silent = true, desc = "剪切" })
+map("v", "<leader>Y", '"+y', { desc = "复制到系统剪贴板" })
 
 map("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "退出编辑器" })
 
