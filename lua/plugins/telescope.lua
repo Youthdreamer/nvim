@@ -17,7 +17,9 @@ return {
 		local telescope = require("telescope")
 		local lga_actions = require("telescope-live-grep-args.actions")
 		telescope.setup({
-			defaults = {},
+			defaults = {
+				border = false,
+			},
 			pickers = {
 				find_files = {
 					-- theme = "cursor",

@@ -168,8 +168,17 @@ return {
 	keys = {
 		{ "<leader>cR", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "重命名符号" },
 		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "LSP 代码操作" },
-		{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "LSP 悬浮信息" },
-
+		{
+			"K",
+			function()
+				vim.lsp.buf.hover({
+					border = "rounded",
+					-- max_width = 80,
+					-- max_height = 20,
+				})
+			end,
+			{ desc = "LSP Hover" },
+		},
 		{ "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "签名帮助" },
 
 		-- 诊断相关快捷键

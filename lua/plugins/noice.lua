@@ -12,6 +12,9 @@ return {
 				enabled = false,
 				-- enabled = true,
 			},
+			hover = {
+				enabled = false,
+			},
 		},
 	},
 	dependencies = {

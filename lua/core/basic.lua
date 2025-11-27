@@ -1,7 +1,8 @@
 --行号
 vim.opt.number = true -- 显示行号
 vim.opt.relativenumber = true -- 显示相对行号
-vim.opt.signcolumn = 'yes'    -- 永远显示 sign column（诊断标记）
+vim.opt.signcolumn = "yes" -- 永远显示 sign column（诊断标记）
+vim.opt.winborder = "rounded" -- 边框样式
 
 --换行统一
 -- 设置文件默认保存格式为 Unix (LF)
@@ -81,4 +82,3 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 -- vim.cmd([[
 --     highlight NotifyBackground guibg=#000000
 -- ]])
-
