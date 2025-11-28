@@ -6,9 +6,6 @@ map("n", "<leader>T", "<cmd>ThemeSwitch<cr>", { silent = true, desc = "主题切
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
-map({ "i", "n" }, "<C-z>", "<Cmd>undo<CR>", { silent = true, desc = "撤销操作" })
-map({ "i", "n" }, "<C-S-z>", "<Cmd>redo<CR>", { silent = true, desc = "反撤销操作" })
-map({ "i", "n", "v" }, "<C-S-q>", "<Cmd>q!<CR>", { silent = true, desc = "不保存退出" })
 map({ "i", "n", "v", "s" }, "<C-s>", "<Cmd>w<CR>", { silent = true, desc = "保存文件" })
 map({ "i", "n" }, "<C-a>", "<Cmd>normal! ggVG<CR>", { silent = true, desc = "全选操作" })
 
