@@ -5,7 +5,7 @@ return {
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 	},
-	event = "InsertEnter", -- 进入插入模式时加载
+	event = { "InsertEnter", "CmdlineEnter" }, -- 进入插入模式时加载
 	opts = {
 		completion = {
 			menu = { border = "rounded" },
@@ -31,6 +31,11 @@ return {
 			default = { "path", "snippets", "buffer", "lsp" },
 		},
 		cmdline = {
+			completion = { 
+				menu = { 
+					auto_show = true 
+				} 
+			},
 			sources = function()
 				local cmd_type = vim.fn.getcmdtype()
 				if cmd_type == "/" then
