@@ -41,39 +41,23 @@ return {
 					expander_expanded = "",
 					expander_highlight = "NeoTreeExpander",
 				},
-				container = {
-					enable_character_border = true, -- 使用字符边框，看起来更现代
-					top_padding = 0,
-					bottom_padding = 0,
-					right_padding = 0,
-					left_padding = 0,
-					padding_char = " ",
-				},
 				file_icons = {
 					enabled = true,
-					-- 更多图标设置
 				},
 				git_status = {
 					symbols = {
-						-- 自定义 Git 状态的符号
-						added = "✚",
-						modified = "",
-						untracked = "",
-						deleted = "✖",
-						ignored = "M",
-						staged = "",
-						conflict = "",
+						added = " ", -- 新增
+						modified = "  ", -- 修改
+						deleted = "󱂥 ", -- 删除
+						renamed = "󰑕 ", -- 重命名
+						untracked = " ", -- 未跟踪
+						unstaged = " ", -- 未暂存
+						staged = "󰩍 ", -- 已暂存
+						ignored = "  ", -- 忽略
+						conflict = " ", -- 冲突（更醒目）
 					},
 				},
 			},
-			-- 如果你想启用浮动窗口：
-			document_symbols = {
-				float_preview_width = 80,
-				float_preview_height = 20,
-				float_preview_left = true,
-				show_diagnostics = true,
-			},
-			-- 更多配置选项请参考 Neotree 的文档
 		},
 	},
 }

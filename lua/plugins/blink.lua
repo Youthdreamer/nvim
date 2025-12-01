@@ -1,4 +1,5 @@
--- 代码不全插件 blink.lua
+-- 代码补全插件 blink.lua
+
 return {
 	"saghen/blink.cmp",
 	version = "*",
@@ -31,10 +32,10 @@ return {
 			default = { "path", "snippets", "buffer", "lsp" },
 		},
 		cmdline = {
-			completion = { 
-				menu = { 
-					auto_show = true 
-				} 
+			completion = {
+				menu = {
+					auto_show = true,
+				},
 			},
 			sources = function()
 				local cmd_type = vim.fn.getcmdtype()
