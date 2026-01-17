@@ -1,17 +1,26 @@
 return {
 	"folke/trouble.nvim",
-	cmd = { "TroubleToggle", "Trouble" },
+	cmd = { "TodoTrouble", "Trouble" },
+	opts = {},
 	keys = {
 		{
+			"<leader>cl",
+			"<cmd>Trouble lsp toggle focus=false win.position=right",
+			desc = "切换 LSP 定义/引用面板 (Trouble)",
+		},
+		{
+			"<leader>xt",
+			"<cmd>TodoTrouble toggle<cr>",
+			desc = "切换TODO面板 (Trouble)",
+		},
+		{
 			"<leader>xx",
-			function()
-				require("trouble").toggle("diagnostics")
-			end,
+			"Trouble diagnostics toggle",
 			desc = "文件诊断信息(Trouble)",
 		},
-		{ "<leader>xX", "<cmd>Trouble workspace_diagnostics<cr>", desc = "工作区诊断信息(Trouble)" },
-		{ "<leader>xL", "<cmd>Trouble loclist<cr>", desc = "位置列表(Trouble)" },
-		{ "<leader>xQ", "<cmd>Trouble quickfix<cr>", desc = "快速修复列表(Trouble)" },
+		{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "工作区诊断信息(Trouble)" },
+		{ "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "位置列表(Trouble)" },
+		{ "<leader>xQ", "<cmd>Trouble quickfix toggle<cr>", desc = "快速修复列表(Trouble)" },
 		{
 			"[q",
 			function()

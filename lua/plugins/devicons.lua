@@ -1,6 +1,6 @@
 return {
 	"nvim-tree/nvim-web-devicons",
 	lazy = true,
-	event = "BufReadPost",
+	-- event = "VeryLazy",
 	opts = {},
 }

@@ -1,7 +1,6 @@
 return {
 	"j-hui/fidget.nvim",
 	event = "LspAttach", -- LSP 客户端附加时加载
-	-- enabled = false,
 	config = function()
 		require("fidget").setup({
 			-- LSP 进度子系统选项
@@ -80,6 +79,7 @@ return {
 				-- 通知窗口和缓冲区选项
 				window = {
 					normal_hl = "Comment", -- 通知窗口背景的默认高亮组
+					-- blend = 0,
 					winblend = 80, -- **窗口透明度，略微透明，不完全遮挡背景**
 					border = "rounded", -- **使用圆角边框，更美观**
 					zindex = 45, -- 堆叠顺序

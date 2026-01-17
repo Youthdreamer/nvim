@@ -1,6 +1,11 @@
 local M = {}
 
 M.colorschemes = {
+	-- ayu主题
+	["ayu-dark"] = {},
+	["ayu-light"] = {},
+	["ayu-mirage"] = {},
+
 	-- gtihub主题
 	["github_dark"] = {},
 	["github_dark_dimmed"] = {},
@@ -14,7 +19,7 @@ M.colorschemes = {
 	["github_light_colorblind"] = {},
 	["github_light_tritanopia"] = {},
 
-	["gruvbox"] = {},
+	["gruvbox"] = { style = "dark" },
 
 	["kanagawa-wave"] = {},
 	["kanagawa-dragon"] = {},
@@ -36,6 +41,7 @@ M.colorschemes = {
 	["tokyonight-storm"] = {},
 	["tokyonight-day"] = {},
 	["tokyonight-moon"] = {},
+
 	-- catppuccin主题
 	["catppuccin-latte"] = {},
 	["catppuccin-frappe"] = {},
@@ -47,6 +53,28 @@ M.colorschemes = {
 	["rose-pine-main"] = {},
 	["rose-pine-moon"] = {},
 	["rose-pine-dawn"] = {},
+
+	-- monokai-pro-nvim主题
+	["monokai-pro-default"] = {},
+	["monokai-pro-ristretto"] = {},
+	["monokai-pro-classic"] = {},
+	["monokai-pro-light"] = {},
+	["monokai-pro-machine"] = {},
+	["monokai-pro-octagon"] = {},
+	["monokai-pro-spectrum"] = {},
+
+	-- onedark-nvim主题
+	["onedark"] = { style = "dark" },
+	["nordic"] = {},
+
+	["vague"] = {},
+
+	-- dracula-nvim主题
+	["dracula"] = {},
+	["dracula-soft"] = {},
+
+	-- poimandres主题
+	["poimandres"] = {},
 }
 
 return M

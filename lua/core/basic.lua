@@ -3,7 +3,7 @@ vim.opt.number = true -- 显示行号
 vim.opt.relativenumber = true -- 显示相对行号
 vim.opt.signcolumn = "yes" -- 永远显示 sign column（诊断标记）
 vim.opt.winborder = "rounded" -- 边框样式
-
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 --换行统一
 -- 设置文件默认保存格式为 Unix (LF)
 vim.opt.fileformat = "unix"
@@ -15,7 +15,7 @@ vim.opt.ignorecase = true -- 搜索忽略大小写
 vim.opt.smartcase = true -- 如果包含大写字符，则区分大小写
 vim.opt.hlsearch = false -- 搜索匹配不高亮
 vim.opt.incsearch = true -- 增量搜索
- 
+
 --换行缩进
 vim.opt.tabstop = 2 -- Tab 长度为 4
 vim.opt.shiftwidth = 2 -- 缩进长度为 4
@@ -27,16 +27,16 @@ vim.opt.colorcolumn = { "80", "120" }
 vim.opt.cursorline = true -- 启动光标行高亮
 
 vim.o.termguicolors = true -- 真色彩Alacritty，kitty，iTerm2 (macOS)，Windows Terminal (Windows 10/11)等
-vim.opt.laststatus = 2 -- 禁用底部状态栏
+vim.opt.laststatus = 0 -- 禁用底部状态栏
 
 -- python中为4个空格的缩进
 -- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = "",
--- 	callback = function()
--- 		vim.opt_local.shiftwidth = 4
--- 		vim.opt_local.tabstop = 8 -- 即使是空格，也建议保持 tabstop 为 8
--- 		vim.opt_local.expandtab = true
--- 	end,
+--      pattern = "",
+--      callback = function()
+--              vim.opt_local.shiftwidth = 4
+--              vim.opt_local.tabstop = 8 -- 即使是空格，也建议保持 tabstop 为 8
+--              vim.opt_local.expandtab = true
+--      end,
 -- })
 
 -- 光标位置
@@ -59,6 +59,21 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.formatoptions:remove({ "c", "r" })
 	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+	pattern = "*",
+	once = true,
+	callback = function()
+		if not vim.g._lazyfile_triggered then
+			vim.g._lazyfile_triggered = true
+			-- 异步调度，保证其他 BufReadPost 回调先执行
+			vim.schedule(function()
+				vim.api.nvim_exec_autocmds("User", { pattern = "LazyFile" })
+			end)
+		end
+	end,
+	desc = "自定义事件LazyFile",
 })
 
 -- 自动保存当前缓冲区或切换缓冲区时保存

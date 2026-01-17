@@ -38,31 +38,9 @@ return {
 			)
 			vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "垂直分割终端" })
 			vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", { desc = "新标签页终端" })
-			vim.keymap.set("n", "<leader>t1", "<Cmd>1ToggleTerm<CR>", { desc = "终端1" })
-			vim.keymap.set("n", "<leader>t2", "<Cmd>2ToggleTerm<CR>", { desc = "终端2" })
-			vim.keymap.set("n", "<leader>t3", "<Cmd>3ToggleTerm<CR>", { desc = "终端3" })
-			vim.keymap.set("n", "<leader>tq", "<Cmd>ToggleTermCloseAll<CR>", { desc = "关闭全部终端" })
 
 			-- 终端中操作
 			vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "普通模式" }) -- 退出终端插入模式
-
-			-- 如果你想创建多个独立的终端会话，可以定义不同的函数
-			function _G.set_terminal_commands()
-				-- 设置一个Git命令终端
-				vim.api.nvim_create_user_command("TermGit", function()
-					require("toggleterm.terminal").Terminal
-						:new({
-							cmd = "lazygit", -- 例如，使用 lazygit
-							direction = "float",
-							hidden = true,
-							size = 0.8,
-						})
-						:toggle()
-				end, { desc = "Open Git Terminal" })
-			end
-			_G.set_terminal_commands() -- 调用函数来定义这些用户命令
-
-			vim.keymap.set("n", "<leader>tg", "<cmd>TermGit<cr>", { desc = "Git 终端 (lazygit)" })
 		end,
 	},
 }

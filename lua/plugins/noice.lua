@@ -10,9 +10,11 @@ return {
 		lsp = {
 			progress = {
 				enabled = false,
-				-- enabled = true,
 			},
 			hover = {
+				enabled = false,
+			},
+			signature = {
 				enabled = false,
 			},
 		},

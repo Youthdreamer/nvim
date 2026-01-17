@@ -1,7 +1,7 @@
 -- 这是一个精简版配置，只保留信息显示和导航功能
 return {
 	"lewis6991/gitsigns.nvim",
-	event = "BufReadPost", -- 在文件读取后加载，这样能更快看到 Git 标记
+	event = "User LazyFile",
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- gitsigns 依赖 plenary.nvim
 	},
@@ -9,14 +9,6 @@ return {
 		require("gitsigns").setup({
 			-- 默认的 Git 标记样式，你可以根据喜好修改字符
 			signs = {
-				add = { text = "┃" },
-				change = { text = "┃" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-				untracked = { text = "┆" },
-			},
-			signs_staged = { -- 已暂存文件的标记样式，与未暂存的区分开
 				add = { text = "┃" },
 				change = { text = "┃" },
 				delete = { text = "_" },

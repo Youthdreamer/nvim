@@ -50,4 +50,40 @@ return {
 		lazy = true,
 		name = "rose-pine",
 	},
+	{
+		"loctvl842/monokai-pro.nvim",
+		lazy = true,
+		name = "monokai-pro",
+	},
+	{
+		"navarasu/onedark.nvim",
+		lazy = true,
+		name = "onedark",
+	},
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = true,
+		name = "nordic",
+	},
+	{
+		"Shatur/neovim-ayu",
+		lazy = true,
+		name = "ayu",
+	},
+	{
+		"vague-theme/vague.nvim",
+		lazy = true,
+		name = "vague",
+	},
+	{
+		"Mofiqul/dracula.nvim",
+		lazy = true,
+		name = "dracula",
+	},
+
+	{
+		"olivercederborg/poimandres.nvim",
+		lazy = true,
+		name = "poimandres",
+	},
 }

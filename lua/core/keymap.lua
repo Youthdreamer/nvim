@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 vim.g.mapleader = " "
 
-map("n", "<leader>T", "<cmd>ThemeSwitch<cr>", { silent = true, desc = "主题切换" })
+map("n", "<leader>T", "<cmd>ThemeSwitch theme=dropdown<cr>", { silent = true, desc = "主题切换" })
 
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -24,10 +24,10 @@ map("n", "<leader>wK", "<C-w>K", { silent = true, desc = "窗口移到底部" })
 map("n", "<leader>wL", "<C-w>L", { silent = true, desc = "窗口移到右边" })
 
 -- 行移动
-map('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down' })
-map('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
-map('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
-map('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 map("n", "<leader><tab><tab>", "<cmd>tabnew<CR>", { silent = true, desc = "新建标签页" })
 map("n", "<leader><tab>d", "<cmd>tabclose<CR>", { silent = true, desc = "关闭当前标签页" })
@@ -36,10 +36,11 @@ map("n", "<leader><tab>l", "<cmd>tabnext<CR>", { silent = true, desc = "切换�
 map("n", "<leader><tab>h", "<cmd>tabprevious<CR>", { silent = true, desc = "切换到上一个标签页" })
 
 -- 复制高亮提示
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'highlight copying text',
-  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank({ timeout = 500 })
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "highlight copying text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank({ timeout = 500 })
+	end,
 })
+

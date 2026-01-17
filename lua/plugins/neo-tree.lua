@@ -1,12 +1,11 @@
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x", -- 确保使用 v3.x 分支以获取最新功能和视觉效果
+		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- 用于文件图标
 			"MunifTanjim/nui.nvim", -- Neotree 的 UI 库
-			-- 'famiu/bufdelete.nvim',      -- 可选，用于更好地处理缓冲区删除
 		},
 		cmd = "Neotree", -- 延迟加载，当你执行 :Neotree 命令时加载
 		keys = {

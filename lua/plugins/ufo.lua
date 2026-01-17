@@ -6,7 +6,7 @@ return {
 			"kevinhwang91/promise-async",
 			"nvim-treesitter/nvim-treesitter", -- 确保 treesitter 已安装
 		},
-		event = "BufReadPost",
+		event = "User LazyFile",
 		config = function()
 			-- 类似 VSCode 的折叠设置
 			-- vim.opt.foldcolumn = "1" -- 折叠列宽度（0 表示只在折叠处显示）
