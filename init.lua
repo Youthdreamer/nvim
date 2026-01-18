@@ -4,7 +4,7 @@
 -- 核心基础配置
 require("core.basic")
 require("core.keymap")
-require("core.lazy") -- 加载Lazy.nvimwen
+require("core.lazy") -- 加载Lazy.nvim
 
 -- 功能配置
 require("features.switch-theme").setup() -- 安装主题后应该在features文件夹下的theme-list.lua主题列表维护
@@ -14,3 +14,4 @@ if vim.g.neovide then
 	require("neovide.basic")
 	require("neovide.keymap")
 end
+

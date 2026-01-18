@@ -10,7 +10,7 @@ M.mason = {
 	-- python的格式化查看下面的自维护列表 (custom_formatters_by_ft)
 	-- python = { "ruff" },
 	-- python = { "black", "isort" },
-	go = { "goimports" }, -- 包含gofmt的功能，附带import的管理
+	-- go = { "goimports" }, -- 包含gofmt的功能，附带import的管理
 	javascript = { "eslint_d", "prettierd" }, -- 使用 prettier 格式化 JavaScript
 	typescript = { "eslint_d", "prettierd" },
 	javascriptreact = { "eslint_d", "prettierd" },

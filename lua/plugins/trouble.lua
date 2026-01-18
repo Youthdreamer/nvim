@@ -1,6 +1,6 @@
 return {
 	"folke/trouble.nvim",
-	cmd = { "TodoTrouble", "Trouble" },
+	cmd = { "Trouble" },
 	opts = {},
 	keys = {
 		{
@@ -10,7 +10,7 @@ return {
 		},
 		{
 			"<leader>xt",
-			"<cmd>TodoTrouble toggle<cr>",
+			"<cmd>Trouble todo toggle<cr>",
 			desc = "切换TODO面板 (Trouble)",
 		},
 		{

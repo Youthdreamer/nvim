@@ -24,16 +24,16 @@ map("n", "<leader>wK", "<C-w>K", { silent = true, desc = "窗口移到底部" })
 map("n", "<leader>wL", "<C-w>L", { silent = true, desc = "窗口移到右边" })
 
 -- 行移动
-map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
-map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+map("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down" })
+map("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move line up" })
+map("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
-map("n", "<leader><tab><tab>", "<cmd>tabnew<CR>", { silent = true, desc = "新建标签页" })
-map("n", "<leader><tab>d", "<cmd>tabclose<CR>", { silent = true, desc = "关闭当前标签页" })
-map("n", "<leader><tab>o", "<cmd>tabonly<CR>", { silent = true, desc = "关闭其他标签页" })
-map("n", "<leader><tab>l", "<cmd>tabnext<CR>", { silent = true, desc = "切换到下一个标签页" })
-map("n", "<leader><tab>h", "<cmd>tabprevious<CR>", { silent = true, desc = "切换到上一个标签页" })
+map("n", "<leader><tab><tab>", "<cmd>tabnew<CR>", { desc = "新建标签页" })
+map("n", "<leader><tab>d", "<cmd>tabclose<CR>", { desc = "关闭当前标签页" })
+map("n", "<leader><tab>o", "<cmd>tabonly<CR>", { desc = "关闭其他标签页" })
+map("n", "<leader><tab>l", "<cmd>tabnext<CR>", { desc = "切换到下一个标签页" })
+map("n", "<leader><tab>h", "<cmd>tabprevious<CR>", { desc = "切换到上一个标签页" })
 
 -- 复制高亮提示
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -43,4 +43,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank({ timeout = 500 })
 	end,
 })
-

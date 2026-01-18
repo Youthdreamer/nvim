@@ -10,7 +10,4 @@ return {
 			ignore_install = {}, -- 忽略的语言列表
 		})
 	end,
-	-- dependencies = {
-	--      "nvim-treesitter/nvim-treesitter-textobjects", -- 强烈推荐安装以获得文本对象和导航
-	-- },
 }
