@@ -15,7 +15,8 @@
 -- =============================================================================
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" },
+	event = "VeryLazy",
+	-- event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		vim.diagnostic.config({
 			-- virtual_lines = true, -- 诊断提示虚拟行

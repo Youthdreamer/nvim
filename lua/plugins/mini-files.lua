@@ -1,7 +1,7 @@
 return {
 	"nvim-mini/mini.files",
 	version = "*",
-	event = { "BufReadPost", "BufNewFile" },
+	event = "VeryLazy",
 	opts = {
 		windows = {
 			preview = true, -- 打开预览窗口

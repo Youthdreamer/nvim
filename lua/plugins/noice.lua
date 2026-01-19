@@ -2,7 +2,6 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	lazy = true,
 	opts = {
 		notify = {
 			enabled = true,

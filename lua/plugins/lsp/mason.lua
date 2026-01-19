@@ -4,6 +4,7 @@ return {
 	event = { "VeryLazy" },
 	dependencies = {
 		"mason-org/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 	},
 	config = function()
 		local servers = require("plugins.lsp.config.servers")

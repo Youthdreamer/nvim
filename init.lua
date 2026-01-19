@@ -2,6 +2,7 @@
 -- _G.Cook = {}
 
 -- 核心基础配置
+require("core.autocmd")
 require("core.basic")
 require("core.keymap")
 require("core.lazy") -- 加载Lazy.nvim
@@ -14,4 +15,3 @@ if vim.g.neovide then
 	require("neovide.basic")
 	require("neovide.keymap")
 end
-

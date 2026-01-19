@@ -1,7 +1,6 @@
 return {
 	"rcarriga/nvim-notify",
 	event = "VeryLazy",
-	lazy = true,
 	opts = {
 		timeout = 3000, -- **消息显示时间（毫秒），例如 3000ms = 3秒**
 		stages = "static", -- **重要：设置为 'static' 可以确保 timeout 精确生效**

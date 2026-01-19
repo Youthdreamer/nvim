@@ -53,45 +53,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false -- 打开文件时不自动折叠
 vim.opt.foldlevelstart = 99 -- 默认展开所有
 
---取消自动换行注释
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	callback = function()
-		vim.opt_local.formatoptions:remove({ "c", "r" })
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-	pattern = "*",
-	once = true,
-	callback = function()
-		if not vim.g._lazyfile_triggered then
-			vim.g._lazyfile_triggered = true
-			-- 异步调度，保证其他 BufReadPost 回调先执行
-			vim.schedule(function()
-				vim.api.nvim_exec_autocmds("User", { pattern = "LazyFile" })
-			end)
-		end
-	end,
-	desc = "自定义事件LazyFile",
-})
-
--- 自动保存当前缓冲区或切换缓冲区时保存
-vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
-	pattern = "*",
-	callback = function()
-		-- 检查缓冲区类型是否为普通文件
-		if vim.bo.buftype == "" and vim.bo.modified and vim.fn.expand("%") ~= "" then
-			local success, err = pcall(function()
-				vim.cmd("write")
-			end)
-
-			if not success then
-				vim.notify("保存文件时出错: " .. err, vim.log.levels.ERROR)
-			end
-		end
-	end,
-})
 
 -- nvim是透明背景时需要这个设置
 -- vim.cmd([[

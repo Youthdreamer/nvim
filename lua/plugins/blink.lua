@@ -1,5 +1,4 @@
 -- 代码补全插件 blink.lua
-
 return {
 	"saghen/blink.cmp",
 	version = "*",

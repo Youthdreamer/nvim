@@ -35,11 +35,3 @@ map("n", "<leader><tab>o", "<cmd>tabonly<CR>", { desc = "关闭其他标签页" 
 map("n", "<leader><tab>l", "<cmd>tabnext<CR>", { desc = "切换到下一个标签页" })
 map("n", "<leader><tab>h", "<cmd>tabprevious<CR>", { desc = "切换到上一个标签页" })
 
--- 复制高亮提示
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "highlight copying text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank({ timeout = 500 })
-	end,
-})

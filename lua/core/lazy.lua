@@ -1,5 +1,4 @@
 -- Lazy.nvim 加载文件lazy.lua
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

@@ -1,7 +1,6 @@
 -- Git可视化 lazygit.lua
 return {
 	"kdheepak/lazygit.nvim",
-	lazy = true,
 	cmd = {
 		"LazyGit",
 		"LazyGitConfig",

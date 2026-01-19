@@ -16,19 +16,23 @@ return {
 ]]
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
-			dashboard.button("p", " " .. " 查看项目", "<cmd>Telescope projects<cr>"),
-			dashboard.button("f", "󰍉 " .. " 查找文件", "<cmd>Telescope find_files<cr>"),
+			dashboard.button(
+				"p",
+				" " .. " 查看项目",
+				"<cmd>Telescope projects layout_config={height=0.6,width=0.6}<cr>"
+			),
+			dashboard.button(
+				"f",
+				"󰍉 " .. " 查找文件",
+				"<cmd>Telescope find_files theme=dropdown previewer=false layout_config={height=0.3}<cr>"
+			),
 			dashboard.button("n", " " .. " 新建文件", [[<cmd> ene <BAR> startinsert <cr>]]),
 			dashboard.button(
 				"s",
 				" " .. " 恢复会话",
 				[[<cmd> lua require('persistence').load({ last = true }) <cr>]]
 			),
-			dashboard.button(
-				"m",
-				" " .. " 查看会话",
-				[[<cmd> lua require('persistence').select({ last = true }) <cr>]]
-			),
+			dashboard.button("m", " " .. " 查看会话", [[<cmd> lua require('persistence').select() <cr>]]),
 			dashboard.button("l", "󰒲 " .. " Lazy", "<cmd> Lazy <cr>"),
 			dashboard.button("q", "󰗼 " .. " 退出", "<cmd> qa <cr>"),
 		}
