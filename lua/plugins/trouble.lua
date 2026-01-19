@@ -15,7 +15,7 @@ return {
 		},
 		{
 			"<leader>xx",
-			"Trouble diagnostics toggle",
+			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "文件诊断信息(Trouble)",
 		},
 		{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "工作区诊断信息(Trouble)" },

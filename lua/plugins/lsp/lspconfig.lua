@@ -31,7 +31,8 @@ return {
 					[vim.diagnostic.severity.HINT] = "💡",
 				},
 			},
-			update_in_insert = false,
+			update_in_insert = true, -- 是否实时显示诊断信息
+			-- update_in_insert = false,
 			underline = true,
 			severity_sort = true,
 			float = {

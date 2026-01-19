@@ -2,16 +2,10 @@
 local M = {}
 
 M.mason = {
+	c = { "clang-format" },
+	cpp = { "clang-format" },
 	lua = { "stylua" }, -- 使用 stylua 格式化 Lua 代码
-	-- rust = { "rustfmt" }, -- 不推荐使用Mason安装的rustfmt格式化工具，推荐的时rustup安装
-	-- rust = {}, -- 不使用Mason安装的工具，所以这里设置为空，不会被Mason下载，战而使用lsp自带的格式化工具
-	-- 使用自定义格式化工具，这是Mason管理的工具，类似于这rust，见下表
-	toml = { "taplo" },
-	-- python的格式化查看下面的自维护列表 (custom_formatters_by_ft)
-	-- python = { "ruff" },
-	-- python = { "black", "isort" },
-	-- go = { "goimports" }, -- 包含gofmt的功能，附带import的管理
-	javascript = { "eslint_d", "prettierd" }, -- 使用 prettier 格式化 JavaScript
+	javascript = { "eslint_d", "prettierd" },
 	typescript = { "eslint_d", "prettierd" },
 	javascriptreact = { "eslint_d", "prettierd" },
 	typescriptreact = { "eslint_d", "prettierd" },
@@ -20,7 +14,12 @@ M.mason = {
 	html = { "prettierd" },
 	yaml = { "prettierd" },
 	markdown = { "prettierd" },
-	json = { "jq" }, -- 使用 jq 格式化 JSON
+	toml = { "taplo" },
+	json = { "prettierd" },
+	-- nix = {"alejandra"},
+	-- bash = { "shfmt" },
+	-- cs = {"csharpier"},
+	-- java = {"google-java-format"},
 }
 
 -- 非Mason管理的格式化工具自维护表，专门设置Mason不支持格式化工具
@@ -35,6 +34,7 @@ M.custom = {
 		-- 整理 import（按规则排序、删除未使用的 import）。
 		"ruff_organize_imports",
 	},
+	-- zig = { "zigfmt" },
 	-- go = { "gofmt" }, -- go安装时附带安装，但是goimports会更好
 }
 
