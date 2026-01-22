@@ -28,6 +28,7 @@ local servers = {
 			Lua = {
 				runtime = {
 					version = "LuaJIT",
+					-- path = vim.split(package.path, ";"),
 				},
 				diagnostics = {
 					globals = { "vim" },
@@ -37,9 +38,7 @@ local servers = {
 				},
 				workspace = {
 					checkThirdParty = false,
-					ignoreDir = {
-						".git",
-					},
+					library = { vim.env.VIMRUNTIME },
 				},
 				hint = {
 					enable = true,
@@ -57,7 +56,7 @@ local servers = {
 		settings = {
 			python = {
 				analysis = {
-					typeCheckingMode = "strict", -- 或 standard/basic
+					typeCheckingMode = "standard", -- 或 standard/basic
 					autoSearchPaths = true,
 					useLibraryCodeForTypes = true,
 					diagnosticMode = "workspace", -- 控制诊断范围
