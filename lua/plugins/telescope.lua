@@ -65,7 +65,7 @@ return {
 		{
 			"<leader>fk",
 			"<cmd>Telescope keymaps layout_config={width=0.8}<cr>",
-			desc = "帮助查询",
+			desc = "快捷键查询",
 		},
 		{
 			"<leader>H",

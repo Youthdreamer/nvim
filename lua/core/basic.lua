@@ -29,16 +29,6 @@ vim.opt.cursorline = true -- 启动光标行高亮
 vim.o.termguicolors = true -- 真色彩Alacritty，kitty，iTerm2 (macOS)，Windows Terminal (Windows 10/11)等
 vim.opt.laststatus = 0 -- 禁用底部状态栏
 
--- python中为4个空格的缩进
--- vim.api.nvim_create_autocmd("FileType", {
---      pattern = "",
---      callback = function()
---              vim.opt_local.shiftwidth = 4
---              vim.opt_local.tabstop = 8 -- 即使是空格，也建议保持 tabstop 为 8
---              vim.opt_local.expandtab = true
---      end,
--- })
-
 -- 光标位置
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
@@ -47,14 +37,8 @@ vim.opt.sidescrolloff = 5
 vim.opt.undofile = true -- 启用持久撤销
 vim.opt.clipboard = "unnamedplus" -- 共享系统剪切板
 
--- 代码折叠
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false -- 打开文件时不自动折叠
-vim.opt.foldlevelstart = 99 -- 默认展开所有
-
-
--- nvim是透明背景时需要这个设置
--- vim.cmd([[
---     highlight NotifyBackground guibg=#000000
--- ]])
+-- 代码折叠 (使用uof.lua的那一套配置)
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldenable = false -- 打开文件时不自动折叠
+-- vim.opt.foldlevelstart = 99 -- 默认展开所有

@@ -9,8 +9,6 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "i", "n", "v", "s" }, "<C-s>", "<Cmd>w<CR>", { silent = true, desc = "保存文件" })
 map({ "i", "n" }, "<C-a>", "<Cmd>normal! ggVG<CR>", { silent = true, desc = "全选操作" })
 
-map("v", "<leader>Y", '"+y', { desc = "复制到系统剪贴板" })
-
 map("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "退出编辑器" })
 
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "增加窗户高度" })

@@ -24,7 +24,7 @@ return {
 
 		keymap = {
 			preset = "super-tab",
-			["<CR>"] = { "accept", "fallback" },
+			-- ["<CR>"] = { "accept", "fallback" },
 		},
 
 		sources = {
