@@ -4,7 +4,7 @@
 -- NOTE: 打开Mason后，lsp列表右侧的名称即是nvim-lspconfiog的名称。
 local servers = {
 	-- C/Cpp
-	["clangd"] = {},
+	clangd = {},
 	-- Rust
 	["rust_analyzer"] = {
 		settings = {
@@ -52,7 +52,7 @@ local servers = {
 		},
 	},
 	-- Python
-	["basedpyright"] = {
+	basedpyright = {
 		settings = {
 			python = {
 				analysis = {
@@ -64,13 +64,13 @@ local servers = {
 			},
 		},
 	},
-	["ruff"] = {},
+	ruff = {},
 
 	-- Web
-	["html"] = {},
-	["cssls"] = {},
+	html = {},
+	cssls = {},
 	["emmet_ls"] = {},
-	["tailwindcss"] = {},
+	tailwindcss = {},
 	-- JS/TS
 	["ts_ls"] = {
 		settings = {
@@ -87,8 +87,8 @@ local servers = {
 			},
 		},
 	},
-	["marksman"] = {},
-	["yamlls"] = {
+	marksman = {},
+	yamlls = {
 		settings = {
 			yaml = {
 				schemaStore = {
@@ -106,18 +106,20 @@ local servers = {
 			},
 		},
 	},
+	-- typst
+	tinymist = {},
 	-- Nix
 	-- ["nil_ls"] = {},
 	-- Go
-	-- ["gopls"] = {},
+	-- gopls = {},
 	-- Bash
-	-- ["bashls"] = {},
+	-- bashls = {},
 	-- Zig
-	-- ["zls"] = {},
+	-- zls = {},
 	-- C#
-	-- ["omnisharp"] = {},
+	-- omnisharp = {},
 	-- java
-	-- ["jdtls"]={},
+	-- jdtls={},
 }
 
 return servers

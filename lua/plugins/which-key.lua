@@ -24,7 +24,7 @@ return {
 			{ "<leader>q", group = "退出编辑器", icon = "󰩈" },
 			{ "<leader>x", group = "问题查看", icon = "" },
 			{ "<leader>o", group = "专注面板", icon = "" },
-			{ "<leader>p", group = " Markdown内容预览", icon = "󰍔" },
+			{ "<leader>p", group = " 文档内容预览(typ/md)", icon = "󰈈" },
 		}, {
 			mode = { "n", "v" },
 		})

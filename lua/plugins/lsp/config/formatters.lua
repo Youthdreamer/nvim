@@ -16,6 +16,7 @@ M.mason = {
 	markdown = { "prettierd" },
 	toml = { "taplo" },
 	json = { "prettierd" },
+	typst = { "typstyle" },
 	-- nix = {"alejandra"},
 	-- bash = { "shfmt" },
 	-- cs = {"csharpier"},
