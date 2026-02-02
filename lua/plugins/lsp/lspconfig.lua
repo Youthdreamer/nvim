@@ -8,9 +8,10 @@
     总结：首先安装mason.nvim管理安装lsp服务器，使用mason-lspconfig将lsp注册到nvim-lspconfig，
         之后将lsp的配置给到nvim内置的lsp客户端完成代码补全之类的功能
 
-    补充：维护本文件的lsp服务器列表，打开文件即可自动下载，
+    补充：维护本文件的lsp服务器列表，打开neovim后即可自动下载，
         也可不写入列表直接使用MasonInstall 安装相关的lsp服务器。
-        格式化工具安装进入"plugins/conform.lua"文件中维护格式化工具列表。
+        格式化工具安装进入"plugins/lsp/config/formatters.lua"文件中维护格式化工具列表。
+        lsp安装进入"plugins/lsp/config/servers.lua"文件中维护lsp列表。
 ]]
 -- =============================================================================
 return {
@@ -46,20 +47,8 @@ return {
 		local on_attach = function(client, bufnr)
 			-- 打印信息用于调试，了解哪个 LSP 客户端连接了
 			-- vim.notify("已连接 LSP 客户端: " .. client.name, vim.log.levels.INFO)
-			-- 禁用 LSP 内置的文档格式化（如果你使用外部格式化工具）
-			vim.lsp.handlers["client"] = nil
-
-			-- =======================格式化工具说明============================
-			--[[
-                未来当Mason不支持的格式化的工具下载的，
-                使用LSP的格式化工具时
-                在"plugins/conform.lua"文件中维护非Mason管理的格式化工具列表。
-            ]]
-			-- =================================================================
-
 			-- 内联提示
 			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-
 			-- 这里两个禁止lsp的格式化，只是用格式化工具提供的格式化，防止lsp与格式化的冲突
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentRangeFormattingProvider = false
@@ -92,8 +81,8 @@ return {
 		-- 诊断相关快捷键
 		{ "<leader>D", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "诊断浮窗" },
 		{ "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "打开当前行的诊断信息浮窗" },
-		{ "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "上一个诊断" },
-		{ "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "下一个诊断" },
+		{ "[d", "<cmd>lua vim.diagnostic.jump({ wrap = true, count = -1 })<cr>", desc = "上一个诊断" },
+		{ "]d", "<cmd>lua vim.diagnostic.jump({ wrap = true, count = 1 })<cr>", desc = "下一个诊断" },
 
 		-- 代码跳转等功能
 		{ "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "定义跳转" },
