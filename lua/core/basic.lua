@@ -4,7 +4,7 @@ vim.opt.relativenumber = true -- 显示相对行号
 vim.opt.signcolumn = "yes" -- 永远显示 sign column（诊断标记）
 vim.opt.winborder = "rounded" -- 边框样式
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
---换行统一
+-- 换行统一
 -- 设置文件默认保存格式为 Unix (LF)
 vim.opt.fileformat = "unix"
 -- 设置文件格式检测优先级，Unix 优先

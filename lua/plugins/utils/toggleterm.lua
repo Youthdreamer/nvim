@@ -16,7 +16,7 @@ return {
 			term_width = 120, -- 可以为不同的方向指定宽度
 			term_high = 20,
 			float_opts = {
-				border = "curved", -- 浮动窗口边框样式: 'single', 'double', 'circular', 'rounded', 'solid', 'none'
+				border = "single", -- 浮动窗口边框样式: 'single', 'double', 'circular', 'rounded', 'solid', 'none'
 				winblend = 0, -- 浮动窗口的透明度 (0-100)
 				height = 20,
 				width = 80,

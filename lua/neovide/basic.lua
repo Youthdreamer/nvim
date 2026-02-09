@@ -10,6 +10,5 @@ vim.g.neovide_box_drawing_mode = "native"
 vim.g.neovide_box_drawing_sizes = { default = { 2, 4 } }
 -- 标题栏设置 win10上暂不支持
 vim.g.neovide_title_background_color =
-        string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
+	string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
 vim.g.neovide_title_text_color = "#ffffff"
-
