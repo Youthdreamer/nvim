@@ -2,15 +2,13 @@ return {
 	"Youthdreamer/obsess",
 	cmd = { "ObsessTimer", "ObsessTimerSec", "ObsessTaskAdd" },
 	opts = {
+		position = "center",
 		window = {
-			relative = "editor",
-			anchor = "NE",
-			col = vim.o.columns,
-			row = 0,
-			width = 30,
-			height = 5,
+			width = 60,
+			height = 15,
 			border = "rounded",
 			style = "minimal",
+			title = "Obsess",
 		},
 		-- 倒计时结束后的弹窗提醒设置
 		flash = {
