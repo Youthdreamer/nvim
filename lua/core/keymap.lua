@@ -18,7 +18,7 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "减少窗户宽�
 
 map("n", "<leader>wH", "<C-w>H", { silent = true, desc = "窗口移到左边" })
 map("n", "<leader>wJ", "<C-w>J", { silent = true, desc = "窗口移到底部" })
-map("n", "<leader>wK", "<C-w>K", { silent = true, desc = "窗口移到底部" })
+map("n", "<leader>wK", "<C-w>K", { silent = true, desc = "窗口移到顶部" })
 map("n", "<leader>wL", "<C-w>L", { silent = true, desc = "窗口移到右边" })
 
 -- 行移动
